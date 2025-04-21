@@ -2,6 +2,10 @@ import cv2
 import numpy as np
 import requests
 import time
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 prototxt_path = "MobileNetSSD_deploy.prototxt"
 model_path = "MobileNetSSD_deploy.caffemodel"
@@ -13,7 +17,7 @@ CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
            "dog", "horse", "motorbike", "person", "pottedplant", "sheep",
            "sofa", "train", "tvmonitor"]
 
-FLOW_URL = "https://prod-07.centralindia.logic.azure.com/workflows/825c254b2b864ef894ef6d4d11cb7b4f/triggers/manual/paths/invoke/motiondetector?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=OsJOdBfBQUiygYVSKfsrfL6vx79b6wCCq0tQQFX65UY"
+FLOW_URL = os.getenv("FLOW_URL")
 
 def send_alert(motion_detected, threat_detected):
     """Send alert to Power Automate flow."""
