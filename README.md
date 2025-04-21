@@ -1,5 +1,7 @@
 # Human Detection and Threat Alert System (BSF, MHA)
 
+https://github.com/user-attachments/assets/cd349ced-fa0a-4e24-a066-257a61de2bc9
+
 This project simulates an agentic AI–based border surveillance system. It uses MobileNet SSD to detect humans in real-time and sends alerts via Power Automate.
 
 ---
